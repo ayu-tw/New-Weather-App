@@ -1,3 +1,50 @@
-.container {
-  margin-top: 50px;
+#container {
+  display: block;
+  margin: 50px auto;
+  padding: 15px;
+  border: 2px solid #8fd9a8;
+  border-radius: 5px;
+  max-width: 500px;
+  background-color: #8fd9a8;
+}
+
+#search-input {
+  max-width: 100%;
+}
+
+#selected-city {
+  font-size: 50px;
+  padding-left: 15px;
+}
+
+#current-temp {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+#local-time {
+  padding-left: 20px;
+}
+
+#local-weather-description {
+  padding-left: 20px;
+}
+
+#humidity,
+#humidity-value,
+#sunrise,
+#sunrise-time,
+#wind,
+#wind-speed,
+#sunset,
+#sunset-time {
+  background-color: rgba(210, 230, 156, 0.4);
+  border: transparent;
+  border-radius: 2px;
+  margin: 5px auto;
+}
+
+#celsius,
+#fahrenheit {
+  text-decoration-line: none;
 }

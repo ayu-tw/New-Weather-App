@@ -19,9 +19,9 @@
     <title>Plus/Week7/Homework</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="row">
-        <div class="col-9">
+        <div class="col-8">
           <input
             type="text"
             placeholder="type in a city name..."
@@ -30,7 +30,7 @@
             id="search-input"
           />
         </div>
-        <div class="col-3">
+        <div class="col-4">
           <input
             type="submit"
             value="search"
@@ -39,40 +39,37 @@
           />
         </div>
       </div>
-      <div class="row" id="selected-city">Taipei</div>
-      <div class="row" id="local-time">Thursday 20:37</div>
-      <div class="row" id="local-weather-description">Partly cloudy</div>
       <div class="row">
-        <div class="col-6" id="current-temp">
-          18
-          <span
-            ><a href="#" id="celsius"> °C</a> |
-            <a href="#" id="fahrenheit">°F</a></span
-          >
-        </div>
-        <div class="col-6">
-          <img
+        <div class="col-6" id="selected-city">Taipei</div>
+        <div class="col-2" id="icon"> <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="partly cloudy"
             id="weather-icon"
-          />
+          /></div><div class="col-4"id="current-temp">18
+          <small><span
+            ><a href="#" id="celsius"> °C</a> |
+            <a href="#" id="fahrenheit">°F</a></span
+          ></small></div>
+        
         </div>
-      </div>
+      <div class="row" id="local-time">Thursday 20:37</div>
+      <div class="row" id="local-weather-description">Partly cloudy</div>
+      
       <div class="row">
         <div class="col-1"><i class="fas fa-tint"></i></div>
-        <div class="col-2">Humidity</div>
-        <div class="col-3" id="humidity">91%</div>
-        <div class="col-1"><i class="fas fa-wind"></i></div>
-        <div class="col-2">Wind</div>
-        <div class="col-3" id="wind">2 km/h</div>
+        <div class="col-2"  id="humidity">Humidity</div>
+        <div class="col-3" id="humidity-value">91%</div>
+        <div class="col-1">🌄</i></div>
+        <div class="col-2" id="sunrise">Sunrise</div>
+        <div class="col-3" id="sunrise-time">06:00</div>
       </div>
       <div class="row">
-        <div class="col-1"><i class="fas fa-sun"></i></div>
-        <div class="col-2">UV Index</div>
-        <div class="col-3" id="uv-index">0 of 10</div>
-        <div class="col-1"><i class="fas fa-eye"></i></div>
-        <div class="col-2">Visibility</div>
-        <div class="col-3" id="visibility">9.66km</div>
+        <div class="col-1"><i class="fas fa-wind"></i></div>
+        <div class="col-2" id="wind">Wind</div>
+        <div class="col-3" id="wind-speed">2 km/h</div>
+        <div class="col-1">🌅</i></div>
+        <div class="col-2" id="sunset">Sunset </div>
+        <div class="col-3"id="sunset-time">19:00</div>
       </div>
     </div>
     <script src="src/app.js"></script>
