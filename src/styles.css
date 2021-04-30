@@ -8,17 +8,28 @@
   background-color: #8fd9a8;
 }
 
+#enter-city-name {
+  margin-bottom: 10px;
+}
 #search-input {
-  max-width: 100%;
+  width: 100%;
+  padding: 5px;
+}
+#submit-button {
+  width: 100%;
+}
+#submit-button:hover {
+  cursor: pointer;
+  box-shadow: none;
 }
 
 #selected-city {
-  font-size: 50px;
+  font-size: 34px;
   padding-left: 15px;
 }
 
 #current-temp {
-  font-size: 30px;
+  font-size: 40px;
   margin-top: 20px;
 }
 
@@ -28,6 +39,11 @@
 
 #local-weather-description {
   padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#local-weather-description:first-letter {
+  text-transform: capitalize;
 }
 
 #humidity,

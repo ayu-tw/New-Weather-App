@@ -1,17 +1,61 @@
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  return `${day} ${hours}:${minutes}`;
+}
+
+function sunUpDown(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 function updateCurrentInfo(response) {
   let cityName = document.querySelector("#selected-city");
   cityName.innerHTML = `${response.data.name}`;
   let description = document.querySelector("#local-weather-description");
   description.innerHTML = `${response.data.weather[0].description}`;
   let temp = document.querySelector("#current-temp");
-  temp.innerHTML = `${response.data.main.temp}`;
-  let humidity = document.querySelector("#humidity");
+  let temperature = Math.round(response.data.main.temp);
+  temp.innerHTML = `${temperature}`;
+  let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = `${response.data.main.humidity}%`;
-  let wind = document.querySelector("#wind");
+  let wind = document.querySelector("#wind-speed");
   let windSpeed = Math.round(response.data.wind.speed);
   wind.innerHTML = `${windSpeed} km/h`;
-  let visibility = document.querySelector("#visibility");
-  visibility.innerHTML = `${response.data.visibility}`;
+  let localTime = document.querySelector("#local-time");
+  localTime.innerHTML = formatDate(response.data.dt * 1000);
+  let sunriseTime = document.querySelector("#sunrise-time");
+  sunriseTime.innerHTML = sunUpDown(response.data.sys.sunrise * 1000);
+  let sunsetTime = document.querySelector("#sunset-time");
+  sunsetTime.innerHTML = sunUpDown(response.data.sys.sunset * 1000);
 }
 
 function defaultPage(event) {

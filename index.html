@@ -20,8 +20,8 @@
   </head>
   <body>
     <div class="container" id="container">
-      <div class="row">
-        <div class="col-8">
+      <div class="row" id="enter-city-name">
+        <div class="col-9">
           <input
             type="text"
             placeholder="type in a city name..."
@@ -30,7 +30,7 @@
             id="search-input"
           />
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <input
             type="submit"
             value="search"
@@ -39,13 +39,14 @@
           />
         </div>
       </div>
-      <div class="row">
+      <div class="row" >
         <div class="col-6" id="selected-city">Taipei</div>
         <div class="col-2" id="icon"> <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="partly cloudy"
             id="weather-icon"
-          /></div><div class="col-4"id="current-temp">18
+          /></div><div class="col-4"> <strong id="current-temp"> 18</strong>
+           
           <small><span
             ><a href="#" id="celsius"> °C</a> |
             <a href="#" id="fahrenheit">°F</a></span
@@ -53,7 +54,7 @@
         
         </div>
       <div class="row" id="local-time">Thursday 20:37</div>
-      <div class="row" id="local-weather-description">Partly cloudy</div>
+      <div class="row" id="local-weather-description">partly cloudy</div>
       
       <div class="row">
         <div class="col-1"><i class="fas fa-tint"></i></div>
