@@ -83,3 +83,7 @@ footer {
   margin-top: -35px;
   margin-right: -220px;
 }
+
+footer a {
+  text-decoration-line: none;
+}

@@ -17,9 +17,27 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
+  let weekday = days[date.getDay()];
 
-  return `${day} ${hours}:${minutes}`;
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "Mai",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "Novemebr",
+    "December",
+  ];
+  let thisMonth = months[date.getMonth()];
+  let today = date.getDate();
+  let thisYear = date.getFullYear();
+
+  return `${weekday}, ${thisMonth} ${today}, ${thisYear} ${hours}:${minutes}`;
 }
 
 function sunUpDown(timestamp) {
