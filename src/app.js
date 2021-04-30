@@ -45,6 +45,7 @@ function updateCurrentInfo(response) {
   let temp = document.querySelector("#current-temp");
   let temperature = Math.round(response.data.main.temp);
   temp.innerHTML = `${temperature}`;
+  currentTemperature = response.data.main.temp;
   let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = `${response.data.main.humidity}%`;
   let wind = document.querySelector("#wind-speed");
@@ -79,7 +80,26 @@ search.addEventListener("click", defaultPage);
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let fahrenheitTemp = ` (${response.data.main.temp} * 9)/5+32`;
+  let temperatureElement = document.querySelector("#current-temp");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = (currentTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+
+  temperatureElement.innerHTML = Math.round(currentTemperature);
+}
+
+let currentTemperature = null;
+
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayCelsiusTemp);

@@ -62,5 +62,11 @@
 
 #celsius,
 #fahrenheit {
+  font-weight: bolder;
   text-decoration-line: none;
+}
+
+.active {
+  color: black;
+  cursor: default;
 }
