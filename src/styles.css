@@ -31,6 +31,7 @@
 #current-temp {
   font-size: 40px;
   margin-top: 20px;
+  padding-left: 15px;
 }
 
 #local-time {
@@ -69,4 +70,16 @@
 .active {
   color: black;
   cursor: default;
+}
+
+#units {
+  position: relative;
+  top: -18px;
+  right: 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: -35px;
+  margin-right: -220px;
 }

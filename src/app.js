@@ -66,17 +66,20 @@ function updateCurrentInfo(response) {
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
-function defaultPage(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-input").value;
-  city = city.trim();
+function searchCity(city) {
   let apiKey = "05348ae2e09beca97cb2165f14ee5d2b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateCurrentInfo);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-input");
+  searchCity(city.value);
+}
+
 let search = document.querySelector("#submit-button");
-search.addEventListener("click", defaultPage);
+search.addEventListener("click", searchCity);
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
@@ -103,3 +106,5 @@ fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
+
+searchCity("Taipei");
