@@ -97,7 +97,7 @@ function handleSubmit(event) {
 }
 
 let search = document.querySelector("#submit-button");
-search.addEventListener("click", searchCity);
+search.addEventListener("click", handleSubmit);
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();

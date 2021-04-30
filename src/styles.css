@@ -25,13 +25,16 @@
 
 #selected-city {
   font-size: 34px;
+  font-weight: bolder;
   padding-left: 15px;
+  padding-top: 25px;
 }
 
 #current-temp {
   font-size: 40px;
-  margin-top: 20px;
   padding-left: 15px;
+  position: relative;
+  top: 24px;
 }
 
 #local-time {
@@ -74,8 +77,8 @@
 
 #units {
   position: relative;
-  top: -18px;
-  right: 0;
+  top: 7px;
+  right: 4px;
 }
 
 footer {
