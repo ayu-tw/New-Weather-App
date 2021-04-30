@@ -56,6 +56,13 @@ function updateCurrentInfo(response) {
   sunriseTime.innerHTML = sunUpDown(response.data.sys.sunrise * 1000);
   let sunsetTime = document.querySelector("#sunset-time");
   sunsetTime.innerHTML = sunUpDown(response.data.sys.sunset * 1000);
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 function defaultPage(event) {
@@ -69,3 +76,10 @@ function defaultPage(event) {
 
 let search = document.querySelector("#submit-button");
 search.addEventListener("click", defaultPage);
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = ` (${response.data.main.temp} * 9)/5+32`;
+}
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", displayFahrenheitTemp);
