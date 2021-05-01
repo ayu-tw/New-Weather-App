@@ -46,10 +46,6 @@
   margin-bottom: 10px;
 }
 
-#local-weather-description:first-letter {
-  text-transform: capitalize;
-}
-
 #humidity,
 #humidity-value,
 #sunrise,

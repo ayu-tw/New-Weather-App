@@ -59,7 +59,10 @@ function updateCurrentInfo(response) {
   let cityName = document.querySelector("#selected-city");
   cityName.innerHTML = `${response.data.name}`;
   let description = document.querySelector("#local-weather-description");
-  description.innerHTML = `${response.data.weather[0].description}`;
+  description.innerHTML = `${
+    response.data.weather[0].description.charAt(0).toUpperCase() +
+    response.data.weather[0].description.slice(1)
+  }`;
   let temp = document.querySelector("#current-temp");
   let temperature = Math.round(response.data.main.temp);
   temp.innerHTML = `${temperature}`;
